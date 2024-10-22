@@ -46,12 +46,15 @@ const Mapper = (task) => {
     let td3 = document.createElement("td");
     td3.innerHTML = ele.status;
     let td4 = document.createElement("td");
+    td4.className = "text-center";
     let btn1 = document.createElement("button");
     btn1.innerHTML = "Edit";
     btn1.addEventListener("click", () => handleUpdate(ele));
+    btn1.className = "btn btn-primary me-4";
     let btn2 = document.createElement("button");
     btn2.innerHTML = "Delete";
     btn2.addEventListener("click", () => handleDelete(ele));
+    btn2.className = "btn btn-danger";
     td4.append(btn1, btn2);
     tr1.append(td1, td2, td3, td4);
     document.getElementById("taskData").append(tr1);
