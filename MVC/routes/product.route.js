@@ -6,16 +6,17 @@ const {
   createProduct,
   deleteProduct,
 } = require("../controllers/product.controller");
+const uploads = require("../utils/upload");
 
-const router = Router();
-router.get("/", getProduct);
+const productRoute = Router();
+productRoute.get("/", getProduct);
 
-router.get("/:productid", getProductById);
+productRoute.get("/:productid", getProductById);
 
-router.patch("/:productid", updateProduct);
+productRoute.patch("/:productid", updateProduct);
 
-router.post("/", createProduct);
+productRoute.post("/", uploads.single("image") ,createProduct);
 
-router.delete("/:productid", deleteProduct);
+productRoute.delete("/:productid", deleteProduct);
 
-module.exports = router;
+module.exports = productRoute;
