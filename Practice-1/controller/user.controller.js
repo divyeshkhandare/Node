@@ -13,6 +13,7 @@ const getUser = async (req, res) => {
   }
 };
 
+
 const createUser = async (req, res) => {
   try {
     const { email } = req.body;
