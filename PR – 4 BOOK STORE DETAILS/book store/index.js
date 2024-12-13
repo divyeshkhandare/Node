@@ -74,7 +74,7 @@ app.get("/books/filter", async (req, res) => {
 
   let books = await Book.find(FilteredBook);
 
-  if (price == "lth") {
+  if (price === "lth") {
     books = books.sort((a, b) => a.price - b.price);
   } else {
     books = books.sort((a, b) => b.price - a.price);
