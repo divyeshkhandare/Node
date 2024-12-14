@@ -38,9 +38,10 @@ const deleteMovies = async (req, res) => {
       const { id } = req.params;
       const movie = await Movies.findByIdAndDelete(id);
       res.status(200).json({ message: "Movie deleted" });
-    }
-    else{
-      res.status(403).json({ message: "You don't have access to delete this movie" });
+    } else {
+      res
+        .status(403)
+        .json({ message: "You don't have access to delete this movie" });
     }
   } catch (error) {
     res.status(400).json({ error: error.message });
